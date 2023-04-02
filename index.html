@@ -19,10 +19,10 @@
             perspective: 500px;
             width: 120px;
             height: 120px;
-            animation: loop 5s linear infinite;
+            animation: sec-spin 5s linear infinite;
             scale: 1.8;
         }
-        @keyframes loop{
+        @keyframes sec-spin{
             to{
                 rotate: 360deg;
             }
@@ -33,28 +33,28 @@
             left: 0;
             width: 100%;
             height: 100%;
-            animation: div 22s infinite ease-in-out alternate-reverse;
+            animation: div-spin 22s infinite ease-in-out alternate-reverse;
         }
-        @keyframes div {
+        
+        div::after{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 9px;
+    top: 0;
+    left: 0;
+    background-color: gold;
+    box-shadow: 0px 0px 1px 0px gold;
+    border-radius: 50%;
+    animation: div-spin 3s infinite alternate-reverse;
+        }
+        @keyframes div-spin {
             to{
 
                 transform:rotate(calc(120deg * var(--d)))  rotateX(360deg) ;
             }
             
         }
-        div::after{
-    content: "";
-    position: absolute;
-    width: 35px;
-    height: 8px;
-    top: 0;
-    left: 0;
-    background-color: gold;
-    box-shadow: 0px 0px 5px 0px gold;
-    border-radius: 50%;
-    animation: div 3s infinite alternate-reverse;
-        }
-        
     </style>
 </head>
 <body>
